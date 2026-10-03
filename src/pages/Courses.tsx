@@ -13,7 +13,11 @@ export default function Courses() {
       <h1 className="page-title">{t('allCourses')}</h1>
       <p className="sub">{t('cSub')}</p>
       {catalogue.loading && <p className="muted">{t('loading')}</p>}
-      {catalogue.error && <p className="error">{catalogue.error}</p>}
+      {catalogue.error && (
+            <p className="error">
+              {t('loadFailed')} <span className="muted small-print">({catalogue.error})</span>
+            </p>
+          )}
       {catalogue.data && <CourseCards catalogue={catalogue.data} />}
     </div>
   )

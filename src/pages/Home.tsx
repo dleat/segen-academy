@@ -82,7 +82,11 @@ export default function Home() {
           <p className="sub">{t('cSub')}</p>
           {catalogue.data && <CourseCards catalogue={catalogue.data} />}
           {catalogue.loading && <p className="muted">{t('loading')}</p>}
-          {catalogue.error && <p className="error">{catalogue.error}</p>}
+          {catalogue.error && (
+            <p className="error">
+              {t('loadFailed')} <span className="muted small-print">({catalogue.error})</span>
+            </p>
+          )}
         </div>
       </section>
 

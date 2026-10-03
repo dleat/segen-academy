@@ -79,7 +79,7 @@ const en = {
   noVideo: 'This lesson has no video yet.', dayOf: 'of',
 
   // misc
-  loading: 'Loading...', error: 'Something went wrong', notFound: 'Page not found', home: 'Home', save: 'Save', saved: 'Saved',
+  loading: 'Loading...', error: 'Something went wrong', loadFailed: 'The courses could not be loaded. Please refresh the page, or contact Dleat if this keeps happening.', notFound: 'Page not found', home: 'Home', save: 'Save', saved: 'Saved',
   contact: 'Contact', footerRights: 'Segen Editing Academy',
 }
 
@@ -141,7 +141,7 @@ const ti: Partial<Dict> = {
   noAccess: 'እዚ ኮርስ ንዓኻ ክፉት ኣይኮነን። ግዛእዎ፡ ወይ ክፍሊትካ ክሳብ ዝረጋገጽ ተጸበ።',
   courseEnded: 'ናይዚ ኮርስ ወርሒ ተወዲኡ።',
   noVideo: 'እዚ ትምህርቲ ገና ቪድዮ የብሉን።', dayOf: 'ካብ',
-  loading: 'ይጽዕን ኣሎ...', error: 'ጌጋ ተፈጢሩ', notFound: 'ገጽ ኣይተረኽበን', home: 'መበገሲ', save: 'ዕቀብ', saved: 'ተዓቂቡ',
+  loading: 'ይጽዕን ኣሎ...', error: 'ጌጋ ተፈጢሩ', loadFailed: 'ኮርሳት ክጽዓኑ ኣይከኣሉን። በጃኹም ገጹ ኣሐድሱ፡ እንተ ቀጺሉ ን ድለት ርኸቡ።', notFound: 'ገጽ ኣይተረኽበን', home: 'መበገሲ', save: 'ዕቀብ', saved: 'ተዓቂቡ',
   contact: 'ርኸበና', footerRights: 'ሰገን ኤዲቲንግ ኣካዳሚ',
 }
 
