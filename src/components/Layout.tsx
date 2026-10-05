@@ -29,6 +29,7 @@ export default function Layout() {
           </Link>
           <nav aria-label="Main">
             <NavLink to="/courses">{t('navCourses')}</NavLink>
+            <NavLink to="/jobs">{t('navJobs')}</NavLink>
             {session && <NavLink to="/my">{t('navMy')}</NavLink>}
             {profile?.is_admin && <NavLink to="/admin">{t('navAdmin')}</NavLink>}
           </nav>
@@ -59,6 +60,7 @@ export default function Layout() {
         </div>
         <nav className="mobile-nav wrap" aria-label="Main">
           <NavLink to="/courses">{t('navCourses')}</NavLink>
+          <NavLink to="/jobs">{t('navJobs')}</NavLink>
           {session && <NavLink to="/my">{t('navMy')}</NavLink>}
           {profile?.is_admin && <NavLink to="/admin">{t('navAdmin')}</NavLink>}
         </nav>

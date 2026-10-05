@@ -13,6 +13,7 @@ import {
 } from '../lib/data'
 import { supabase } from '../lib/supabase'
 import { useLoad } from '../lib/useLoad'
+import { EditorsAdmin, JobsAdmin } from './AdminJobs'
 
 // Dleat's private area. Kept in English only.
 
@@ -23,6 +24,8 @@ const TABS = [
   ['students', 'Students'],
   ['lessons', 'Lessons'],
   ['settings', 'Payment details'],
+  ['editors', 'Job editors'],
+  ['jobs', 'Jobs'],
 ] as const
 
 type Tab = (typeof TABS)[number][0]
@@ -66,6 +69,8 @@ export default function Admin() {
           {tab === 'students' && <Students catalogue={catalogue.data} />}
           {tab === 'lessons' && <Lessons catalogue={catalogue.data} />}
           {tab === 'settings' && <SettingsForm />}
+          {tab === 'editors' && <EditorsAdmin />}
+          {tab === 'jobs' && <JobsAdmin />}
         </>
       )}
     </div>
@@ -78,7 +83,7 @@ function offerTitle(catalogue: Catalogue, id: string) {
 
 const METHOD: Record<Purchase['method'], string> = { telebirr: 'Telebirr', bank: 'Bank transfer', abroad: 'Outside Ethiopia' }
 
-function when(s: string) {
+export function when(s: string) {
   return new Date(s).toLocaleString('en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
 }
 
@@ -148,7 +153,7 @@ function Payments({ catalogue }: { catalogue: Catalogue }) {
 }
 
 // Receipts are private, so each one is shown through a short-lived link.
-function Receipt({ path }: { path: string | null }) {
+export function Receipt({ path }: { path: string | null }) {
   const [url, setUrl] = useState<string | null>(null)
   useEffect(() => {
     if (!supabase || !path) return
