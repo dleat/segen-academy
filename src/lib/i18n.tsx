@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
+import { jobsEn, jobsTi } from './jobsText'
 
 export type Lang = 'en' | 'ti'
 
@@ -81,6 +82,8 @@ const en = {
   // misc
   loading: 'Loading...', error: 'Something went wrong', loadFailed: 'The courses could not be loaded. Please refresh the page, or contact Dleat if this keeps happening.', notFound: 'Page not found', home: 'Home', save: 'Save', saved: 'Saved',
   contact: 'Contact', footerRights: 'Segen Editing Academy',
+
+  ...jobsEn,
 }
 
 type Dict = typeof en
@@ -143,6 +146,8 @@ const ti: Partial<Dict> = {
   noVideo: 'እዚ ትምህርቲ ገና ቪድዮ የብሉን።', dayOf: 'ካብ',
   loading: 'ይጽዕን ኣሎ...', error: 'ጌጋ ተፈጢሩ', loadFailed: 'ኮርሳት ክጽዓኑ ኣይከኣሉን። በጃኹም ገጹ ኣሐድሱ፡ እንተ ቀጺሉ ን ድለት ርኸቡ።', notFound: 'ገጽ ኣይተረኽበን', home: 'መበገሲ', save: 'ዕቀብ', saved: 'ተዓቂቡ',
   contact: 'ርኸበና', footerRights: 'ሰገን ኤዲቲንግ ኣካዳሚ',
+
+  ...jobsTi,
 }
 
 export type TKey = keyof Dict

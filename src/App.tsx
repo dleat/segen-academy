@@ -12,6 +12,12 @@ import Home from './pages/Home'
 import Learn from './pages/Learn'
 import MyCourses from './pages/MyCourses'
 import NotFound from './pages/NotFound'
+import EditorApply from './pages/jobs/EditorApply'
+import JobPage from './pages/jobs/JobPage'
+import JobsHome from './pages/jobs/JobsHome'
+import JobsLayout from './pages/jobs/JobsLayout'
+import MyJobs from './pages/jobs/MyJobs'
+import PostJob from './pages/jobs/PostJob'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -38,6 +44,13 @@ export default function App() {
               <Route path="my" element={<RequireAuth><MyCourses /></RequireAuth>} />
               <Route path="learn/:courseId" element={<RequireAuth><Learn /></RequireAuth>} />
               <Route path="admin" element={<RequireAuth adminOnly><Admin /></RequireAuth>} />
+              <Route path="jobs" element={<JobsLayout />}>
+                <Route index element={<JobsHome />} />
+                <Route path="new" element={<RequireAuth><PostJob /></RequireAuth>} />
+                <Route path="mine" element={<RequireAuth><MyJobs /></RequireAuth>} />
+                <Route path="editor" element={<RequireAuth><EditorApply /></RequireAuth>} />
+                <Route path=":jobId" element={<RequireAuth><JobPage /></RequireAuth>} />
+              </Route>
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>

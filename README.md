@@ -16,6 +16,21 @@ This first version has:
 Still to come (plan phase 3 and 4): final quiz, project review, certificates,
 email notices, more Tigrinya text.
 
+## Segen Jobs (at /jobs)
+
+A linked work site with the same login. Clients post a video job, editors that
+Dleat approved (Segen certificate plus Dleat's own test) send offers, and the
+client picks one. The editor sends a preview as an unlisted YouTube video with
+the SEGEN PREVIEW watermark (`public/segen-preview-watermark.png`) and the
+finished file as a Google Drive (or similar) link. The client sees only the
+preview until Dleat approves their payment receipt; then the download link
+opens. Every job includes 3 free correction rounds. Dleat pays the editor half
+when the client pays and the rest (minus Segen's 15%) when the client accepts
+the work. Admin has two new tabs for this: *Job editors* and *Jobs*.
+
+To turn it on, run `supabase/migrations/20261005000000_jobs.sql` once in the
+Supabase *SQL Editor*. It only adds new tables, so the academy is not touched.
+
 ## How it is built
 
 - **Website:** React + Vite, a static site hosted on Cloudflare Pages
